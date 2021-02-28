@@ -22,6 +22,7 @@ const styles = (theme: Theme) => createStyles({
   checkIcon: {
     fill: theme.palette.common.white,
     height: '1rem',
+    lineHeight: 1,
     marginLeft: '0.2rem',
     width: '1rem',
     position: 'relative',
@@ -60,18 +61,23 @@ const styles = (theme: Theme) => createStyles({
   },
   isCorrect: {},
   label: {
+    alignItems: 'center',
     border: '2px solid transparent',
-    display: 'block',
+    display: 'flex',
     fontWeight: theme.typography.fontWeightBold,
+    height: '1.5rem',
+    lineHeight: 1,
     padding: '0.25rem',
     width: '100%',
     '&:hover': {
       cursor: 'pointer',
     },
     [theme.breakpoints.up('sm')]: {
+      height: '2rem',
       padding: '0.5rem',
     },
     [theme.breakpoints.up('md')]: {
+      height: '3rem',
       padding: '1rem',
     },
   },

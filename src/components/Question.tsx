@@ -61,13 +61,15 @@ const styles = (theme: Theme) => createStyles({
     height: '1rem',
   },
   options: {
-    columnGap: '1rem',
+    columnGap: '0.5rem',
     display: 'grid',
     gridTemplateColumns: 'repeat(1, 1fr)',
     gridTemplateRows: 'auto',
-    rowGap: '1rem',
+    rowGap: '0.5rem',
     [theme.breakpoints.up('sm')]: {
+      columnGap: '1rem',
       gridTemplateColumns: 'repeat(2, 1fr)',
+      rowGap: '1rem',
     },
     [theme.breakpoints.up('md')]: {
       gridTemplateColumns: 'repeat(4, 1fr)',
