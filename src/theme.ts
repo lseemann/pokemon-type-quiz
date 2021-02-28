@@ -5,6 +5,9 @@ import {
 export const theme = createMuiTheme({
   overrides: {},
   palette: {
+    background: {
+      default: '#003965',
+    },
     error: {
       main: '#dc4738',
     },

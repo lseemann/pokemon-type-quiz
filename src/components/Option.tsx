@@ -14,6 +14,7 @@ import CheckIcon from '@material-ui/icons/Check';
 const styles = (theme: Theme) => createStyles({
   checked: {
     '&:not($isSubmitted) label': {
+      borderStyle: 'dashed',
       color: theme.palette.common.white,
       animation: '$checked 4s infinite',
     },
@@ -26,7 +27,11 @@ const styles = (theme: Theme) => createStyles({
     position: 'relative',
     top: '0.1rem',
   },
-  disabled: {},
+  disabled: {
+    '& $label:hover': {
+      cursor: 'default',
+    },
+  },
   focus: {
     '&:not($disabled)': {
       backgroundColor: theme.palette.grey[600],
@@ -91,13 +96,13 @@ const styles = (theme: Theme) => createStyles({
   },
   '@keyframes checked': {
     '0%': {
-      backgroundColor: theme.palette.grey[600],
-    },
-    '70%': {
       backgroundColor: theme.palette.grey[500],
     },
+    '70%': {
+      backgroundColor: theme.palette.grey[400],
+    },
     '100%': {
-      backgroundColor: theme.palette.grey[600],
+      backgroundColor: theme.palette.grey[500],
     },
   },
   '@keyframes pulse': {
