@@ -65,7 +65,7 @@ const styles = (theme: Theme) => createStyles({
     border: '2px solid transparent',
     display: 'flex',
     fontWeight: theme.typography.fontWeightBold,
-    height: '1.5rem',
+    height: '1.8rem',
     lineHeight: 1,
     padding: '0.25rem',
     width: '100%',

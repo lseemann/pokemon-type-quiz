@@ -25,8 +25,8 @@ const styles = (theme: Theme) => createStyles({
   result: {
     fontSize: '1.25rem',
     fontWeight: theme.typography.fontWeightBold,
-    lineHeight: 'normal',
-    margin: '0 auto 1rem',
+    lineHeight: '1',
+    margin: '0 auto 0.5rem',
     maxWidth: 300,
     textAlign: 'center',
   },
@@ -35,23 +35,6 @@ const styles = (theme: Theme) => createStyles({
   },
   incorrect: {
     color: theme.palette.error.main,
-  },
-  correctLeadin: {
-    lineHeight: 'normal',
-    margin: '-0.5rem auto 0.5rem',
-    maxWidth: 300,
-    textAlign: 'center',
-  },
-  correctList: {
-    display: 'flex',
-    margin: '0 auto 1rem',
-    maxWidth: 300,
-    padding: 0,
-    textAlign: 'center',
-  },
-  correctItem: {
-    display: 'inline-flex',
-    alignItems: 'center',
   },
   correctItemSelected: {
     color: theme.palette.success.main,
@@ -63,12 +46,11 @@ const styles = (theme: Theme) => createStyles({
   options: {
     columnGap: '0.5rem',
     display: 'grid',
-    gridTemplateColumns: 'repeat(1, 1fr)',
+    gridTemplateColumns: 'repeat(2, 1fr)',
     gridTemplateRows: 'auto',
     rowGap: '0.5rem',
     [theme.breakpoints.up('sm')]: {
       columnGap: '1rem',
-      gridTemplateColumns: 'repeat(2, 1fr)',
       rowGap: '1rem',
     },
     [theme.breakpoints.up('md')]: {
@@ -84,10 +66,16 @@ const styles = (theme: Theme) => createStyles({
     textAlign: 'center',
   },
   question: {
-    fontSize: '3rem',
+    fontSize: '1.5rem',
     lineHeight: 'normal',
-    margin: '1rem',
+    margin: '1rem 0 0.5rem',
     textAlign: 'center',
+    [theme.breakpoints.up('sm')]: {
+      rowGap: '2rem',
+    },
+    [theme.breakpoints.up('lg')]: {
+      rowGap: '3rem',
+    },
   },
   root: {
     margin: '0 auto',

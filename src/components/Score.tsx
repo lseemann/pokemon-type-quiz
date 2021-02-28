@@ -17,20 +17,28 @@ const styles = (theme: Theme) => createStyles({
     color: theme.palette.error.main,
   },
   label: {
+    fontSize: '0.75rem',
     fontWeight: theme.typography.fontWeightLight,
+    lineHeight: 1,
     textTransform: 'uppercase',
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '1rem',
+    },
   },
   score: {
-    fontSize: '3rem',
+    fontSize: '2rem',
     fontWeight: 900,
+    lineHeight: 1,
     textAlign: 'center',
+    [theme.breakpoints.up('sm')]: {
+      rowGap: '3rem',
+    },
   },
   scoreBox: {
     textAlign: 'center',
     width: '50%',
   },
   root: {
-
     display: 'flex',
     margin: '1rem auto',
     maxWidth: 300,
