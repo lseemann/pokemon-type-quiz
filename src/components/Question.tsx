@@ -223,7 +223,9 @@ const Question: React.FC<Props> = ({ updateScore }: Props) => {
         </Typography>
       ) : (
         <Typography className={classes.pick}>
-          {remaining > 0 ? `Pick ${remaining} more` : 'Good luck!'}
+          {remaining > 0
+            ? `Pick ${remaining} ${remaining < key.length ? 'more' : ''}`
+            : 'Good luck!'}
         </Typography>
       )}
 
