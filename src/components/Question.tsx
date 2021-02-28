@@ -197,10 +197,17 @@ const Question: React.FC<Props> = ({ updateScore }: Props) => {
     });
     updateScore(newResults);
     dispatch({ type: 'submit', results: newResults });
+    gtag('event', 'answer', {
+      event_category: 'question',
+      event_label: `${newResults[0]}/${newResults[1]}`,
+    });
   };
 
   const handleNext = () => {
     dispatch({ type: 'new' });
+    gtag('event', 'next', {
+      event_category: 'question',
+    });
   };
 
   const remaining = key.length - answers.length;
