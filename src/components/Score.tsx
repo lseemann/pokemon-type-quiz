@@ -31,7 +31,7 @@ const styles = (theme: Theme) => createStyles({
     lineHeight: 1,
     textAlign: 'center',
     [theme.breakpoints.up('sm')]: {
-      rowGap: '3rem',
+      fontSize: '3rem',
     },
   },
   scoreBox: {

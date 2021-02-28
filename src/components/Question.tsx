@@ -25,8 +25,8 @@ const styles = (theme: Theme) => createStyles({
   result: {
     fontSize: '1.25rem',
     fontWeight: theme.typography.fontWeightBold,
-    lineHeight: '1',
-    margin: '0 auto 0.5rem',
+    lineHeight: 'normal',
+    margin: '0 auto 1rem',
     maxWidth: 300,
     textAlign: 'center',
   },
@@ -62,7 +62,8 @@ const styles = (theme: Theme) => createStyles({
   },
   pick: {
     color: theme.palette.text.secondary,
-    marginBottom: '1rem',
+    lineHeight: 'normal',
+    marginBottom: '1.25rem',
     textAlign: 'center',
   },
   question: {
