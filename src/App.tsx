@@ -84,7 +84,7 @@ function App() {
   };
 
   useEffect(() => {
-    localStorage.setItem('score', JSON.stringify(stats));
+    localStorage.setItem('stats', JSON.stringify(stats));
   }, [stats]);
 
   return (
