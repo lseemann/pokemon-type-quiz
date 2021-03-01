@@ -48,6 +48,7 @@ function App() {
     storedStats = JSON.parse(localStorage.getItem('stats')!);
   }
 
+  const [questionCount, setQuestionCount] = useState(0);
   const [stats, setStats] = useState<Stats>(
     storedStats || initialStats,
   );
@@ -56,6 +57,11 @@ function App() {
   const updateScore = (results: Results) => {
     const [correct, outOf] = results;
     const isPerfect = outOf > 0 && correct === outOf;
+    setQuestionCount(questionCount + 1);
+    gtag('event', 'count', {
+      event_category: 'question',
+      event_label: questionCount,
+    });
     setStats({
       correct: stats.correct + correct,
       outOf: stats.outOf + outOf,
