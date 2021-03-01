@@ -21,7 +21,7 @@ const styles = () => createStyles({
     },
   },
   resetButton: {
-    alignSelf: 'flex-end',
+    alignSelf: 'center',
     color: theme.palette.text.secondary,
     margin: '0 1rem 1rem 0',
   },

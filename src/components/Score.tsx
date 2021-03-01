@@ -40,7 +40,7 @@ const styles = (theme: Theme) => createStyles({
   },
   root: {
     display: 'flex',
-    margin: '1rem auto',
+    margin: '1rem auto 0',
     maxWidth: 300,
     width: '100%',
     [theme.breakpoints.up('sm')]: {

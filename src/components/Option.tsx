@@ -10,6 +10,7 @@ import {
 import PokeType from 'classes/PokeType';
 import { ICON_PATH } from 'data/PokeTypes';
 import CheckIcon from '@material-ui/icons/Check';
+import CancelIcon from '@material-ui/icons/Cancel';
 
 const styles = (theme: Theme) => createStyles({
   checked: {
@@ -19,14 +20,20 @@ const styles = (theme: Theme) => createStyles({
       animation: '$checked 4s infinite',
     },
   },
+  cancelIcon: {
+    fill: theme.palette.common.white,
+    opacity: 0.5,
+  },
   checkIcon: {
     fill: theme.palette.common.white,
+    top: '0.1rem',
+  },
+  resultIcon: {
     height: '1rem',
     lineHeight: 1,
     marginLeft: '0.2rem',
     width: '1rem',
     position: 'relative',
-    top: '0.1rem',
   },
   disabled: {
     '& $label:hover': {
@@ -211,7 +218,18 @@ const Option: React.FC<Props> = ({
         {pokeType.name}
         {isSubmitted && isCorrect && checked && (
           <CheckIcon
-            className={classes.checkIcon}
+            className={`
+              ${classes.checkIcon}
+              ${classes.cancelIcon}
+            `}
+          />
+        )}
+        {isSubmitted && !isCorrect && checked && (
+          <CancelIcon
+            className={`
+              ${classes.resultIcon}
+              ${classes.cancelIcon}
+            `}
           />
         )}
       </label>

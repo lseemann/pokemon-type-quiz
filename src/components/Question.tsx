@@ -18,7 +18,7 @@ import {
 const styles = (theme: Theme) => createStyles({
   button: {
     display: 'block',
-    margin: '2rem auto',
+    margin: '2rem auto 0.5rem',
     maxWidth: 600,
     width: '100%',
   },
@@ -50,11 +50,12 @@ const styles = (theme: Theme) => createStyles({
     gridTemplateRows: 'auto',
     rowGap: '0.5rem',
     [theme.breakpoints.up('sm')]: {
+      gridTemplateColumns: 'repeat(3, 1fr)',
       columnGap: '1rem',
       rowGap: '1rem',
     },
     [theme.breakpoints.up('md')]: {
-      gridTemplateColumns: 'repeat(4, 1fr)',
+      gridTemplateColumns: 'repeat(5, 1fr)',
     },
     [theme.breakpoints.up('lg')]: {
       gridTemplateColumns: 'repeat(6, 1fr)',
@@ -81,9 +82,10 @@ const styles = (theme: Theme) => createStyles({
   root: {
     margin: '0 auto',
     maxWidth: 1200,
-    padding: '0 1rem 1rem',
+    padding: '0 1rem',
+    width: '100%',
     [theme.breakpoints.up('md')]: {
-      padding: '0 2rem 2rem',
+      padding: '0 2rem',
     },
   },
 });
