@@ -88,11 +88,11 @@ class PokeType {
   }
 
   isStrongAgainst(foe: PokeType): boolean {
-    return this.notEffective.includes(foe) || this.noEffect.includes(foe);
+    return this.superEffective.includes(foe);
   }
 
   isWeakAgainst(foe: PokeType): boolean {
-    return this.superEffective.includes(foe);
+    return this.notEffective.includes(foe) || this.noEffect.includes(foe);
   }
 
   isSuperWeakAgainst(foe: PokeType): boolean {
