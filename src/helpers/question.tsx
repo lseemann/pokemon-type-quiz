@@ -70,7 +70,7 @@ export const getQuestionData = (questionType: questionType, pokeType: PokeType):
         key: pokeType.getVulnerableTo(),
         question: (
           <>
-            Who is strong against
+            Who is weak when defending against
             {' '}
             <Highlight>{pokeType.name}</Highlight>
             ?
@@ -83,7 +83,7 @@ export const getQuestionData = (questionType: questionType, pokeType: PokeType):
         key: pokeType.getResistantTo(),
         question: (
           <>
-            Who is weak against
+            Who is strong when defending against
             {' '}
             <Highlight>{pokeType.name}</Highlight>
             ?
