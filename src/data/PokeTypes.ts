@@ -1,111 +1,127 @@
 import PokeType from 'classes/PokeType';
-
-export const ICON_PATH = '/icons/';
+import BugIcon from 'components/icons/Bug';
+import DarkIcon from 'components/icons/Dark';
+import DragonIcon from 'components/icons/Dragon';
+import ElectricIcon from 'components/icons/Electric';
+import FairyIcon from 'components/icons/Fairy';
+import FightingIcon from 'components/icons/Fighting';
+import FireIcon from 'components/icons/Fire';
+import FlyingIcon from 'components/icons/Flying';
+import GhostIcon from 'components/icons/Ghost';
+import GrassIcon from 'components/icons/Grass';
+import GroundIcon from 'components/icons/Ground';
+import IceIcon from 'components/icons/Ice';
+import NormalIcon from 'components/icons/Normal';
+import PoisonIcon from 'components/icons/Poison';
+import PsychicIcon from 'components/icons/Psychic';
+import RockIcon from 'components/icons/Rock';
+import SteelIcon from 'components/icons/Steel';
+import WaterIcon from 'components/icons/Water';
 
 const normal = new PokeType({
-  icon: 'normal.svg',
+  icon: NormalIcon,
   name: 'Normal',
   altColor: '#cbc8a5',
   color: '#aba96c',
 });
 const fire = new PokeType({
-  icon: 'fire.svg',
+  icon: FireIcon,
   name: 'Fire',
   altColor: '#ff7700',
   color: '#ff0000',
 });
 const water = new PokeType({
-  icon: 'water.svg',
+  icon: WaterIcon,
   name: 'Water',
   altColor: '#007ac1',
   color: '#00517d',
 });
 const electric = new PokeType({
-  icon: 'electric.svg',
+  icon: ElectricIcon,
   name: 'Electric',
   altColor: '#f2ff6e',
   color: '#959100',
 });
 const grass = new PokeType({
-  icon: 'grass.svg',
+  icon: GrassIcon,
   name: 'Grass',
   altColor: '#009a00',
   color: '#0f4000',
 });
 const ice = new PokeType({
-  icon: 'ice.svg',
+  icon: IceIcon,
   name: 'Ice',
   altColor: '#0097a3',
   color: '#003d43',
 });
 const fighting = new PokeType({
-  icon: 'fighting.svg',
+  icon: FightingIcon,
   name: 'Fighting',
-  altColor: 'xxx',
+  altColor: '#fb0000',
   color: '#8a0004',
 });
 const poison = new PokeType({
-  icon: 'poison.svg',
+  icon: PoisonIcon,
   name: 'Poison',
   altColor: '#b800de',
   color: '#6a0084',
 });
 const ground = new PokeType({
-  icon: 'ground.svg',
+  icon: GroundIcon,
   name: 'Ground',
   altColor: '#e2d138',
   color: '#c0ac00',
 });
 const flying = new PokeType({
-  icon: 'flying.svg',
+  icon: FlyingIcon,
   name: 'Flying',
   altColor: '#33bbb2',
   color: '#005764',
 });
 const psychic = new PokeType({
-  icon: 'psychic.svg',
+  icon: PsychicIcon,
   name: 'Psychic',
   altColor: '#ff0061',
   color: '#95002f',
 });
 const bug = new PokeType({
-  icon: 'bug.svg',
+  icon: BugIcon,
   name: 'Bug',
   altColor: '#b2df59',
   color: '#82bc00',
 });
 const rock = new PokeType({
-  icon: 'rock.svg',
+  icon: RockIcon,
   name: 'Rock',
   altColor: '#786935',
   color: '#474021',
 });
 const ghost = new PokeType({
-  icon: 'ghost.svg',
+  icon: GhostIcon,
   name: 'Ghost',
   altColor: '#974da8',
   color: '#4b2754',
 });
 const dragon = new PokeType({
-  icon: 'dragon.svg',
+  icon: DragonIcon,
   name: 'Dragon',
   altColor: '#9646ff',
   color: '#2f006e',
 });
 const dark = new PokeType({
-  icon: 'dark.svg',
+  icon: DarkIcon,
   name: 'Dark',
   altColor: '#62452e',
   color: '#2e201a',
 });
 const steel = new PokeType({
-  icon: 'steel.svg',
+  icon: SteelIcon,
   name: 'Steel',
   altColor: '#758e89',
   color: '#444444',
 });
 const fairy = new PokeType({
-  icon: 'fairy.svg',
+  icon: FairyIcon,
   name: 'Fairy',
   altColor: '#ff99c2',
   color: '#ff73a6',

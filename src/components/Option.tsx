@@ -8,7 +8,6 @@ import {
   Paper,
 } from '@material-ui/core';
 import PokeType from 'classes/PokeType';
-import { ICON_PATH } from 'data/PokeTypes';
 import CheckIcon from '@material-ui/icons/Check';
 import CancelIcon from '@material-ui/icons/Cancel';
 
@@ -46,18 +45,12 @@ const styles = (theme: Theme) => createStyles({
       color: theme.palette.common.white,
     },
   },
-  icon: {
-    display: 'block',
-    height: '0.8em',
-    margin: '0 auto',
-    width: '0.8em',
-  },
   iconWrapper: {
     alignItems: 'center',
     borderRadius: '50%',
     display: 'inline-flex',
     height: '1.2rem',
-    justifyItems: 'center',
+    justifyContent: 'center',
     margin: '0 0.5rem 0 0',
     textAlign: 'center',
     width: '1.2rem',
@@ -209,11 +202,10 @@ const Option: React.FC<Props> = ({
           className={classes.iconWrapper}
           style={{ backgroundColor: iconColor }}
         >
-          <img
-            src={`${ICON_PATH}${pokeType.icon}`}
-            alt=""
-            className={classes.icon}
-          />
+          {React.createElement(
+            pokeType.icon,
+            { height: '0.8rem', width: '0.8rem' },
+          )}
         </figure>
         {pokeType.name}
         {isSubmitted && isCorrect && checked && (

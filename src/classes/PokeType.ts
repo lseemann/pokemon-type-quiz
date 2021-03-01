@@ -8,8 +8,9 @@ interface TypeLoad {
 
 interface Config {
   altColor: string;
-  icon: string; name: PokeTypeName;
-  color: string
+  icon: ({ height, width }: { height?: string, width?:string }) => JSX.Element;
+  name: PokeTypeName;
+  color: string;
 }
 
 class PokeType {
@@ -17,7 +18,7 @@ class PokeType {
 
   color: string;
 
-  icon: string;
+  icon: ({ height, width }: { height?: string; width?: string }) => JSX.Element;
 
   name: PokeTypeName;
 
