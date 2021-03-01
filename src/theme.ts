@@ -4,6 +4,9 @@ import {
 
 export const theme = createMuiTheme({
   overrides: {},
+  typography: {
+    fontFamily: '"Ringside Regular SSm A", "Ringside Regular SSm B", "roboto", "sans-serif"',
+  },
   palette: {
     background: {
       default: '#003965',
