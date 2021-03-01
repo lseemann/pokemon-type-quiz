@@ -194,7 +194,7 @@ const Option: React.FC<Props> = ({
       <input
         checked={answers.includes(pokeType)}
         className={classes.input}
-        disabled={isSubmitted || disabled}
+        disabled={isSubmitted || (disabled && !checked)}
         id={pokeType.name}
         onChange={handleChange}
         type="checkbox"

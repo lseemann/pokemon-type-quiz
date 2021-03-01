@@ -1,3 +1,5 @@
+declare module 'react-number-easing';
+
 type PokeTypeName =
   | 'Bug'
   | 'Dark'

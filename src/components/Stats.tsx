@@ -8,6 +8,7 @@ import {
   Typography,
   Divider,
 } from '@material-ui/core';
+import NumberEasing from 'react-number-easing';
 
 const styles = (theme: Theme) => createStyles({
   root: {
@@ -86,6 +87,7 @@ const Stats: React.FC<Props> = ({ stats }: Props) => {
   const {
     correct, outOf, currentStreak, longestStreak,
   } = stats;
+  const easeSpeed = 1000;
 
   return (
     <Box
@@ -95,26 +97,35 @@ const Stats: React.FC<Props> = ({ stats }: Props) => {
       display="flex"
     >
       <Box className={classes.stat}>
-        <Typography className={classes.score}>{correct}</Typography>
+        <Typography className={classes.score}>
+          <NumberEasing value={correct} speed={easeSpeed} />
+        </Typography>
         <Typography className={classes.label}>Correct</Typography>
       </Box>
       <Divider className={classes.divider} />
       <Box className={classes.stat}>
-        <Typography className={classes.score}>{outOf - correct}</Typography>
+        <Typography className={classes.score}>
+          <NumberEasing value={outOf - correct} speed={easeSpeed} />
+        </Typography>
         <Typography className={classes.label}>Incorrect</Typography>
       </Box>
-      <Divider className={`
+      <Divider
+        className={`
         ${classes.divider}
         ${classes.dividerLarge}
         `}
       />
       <Box className={classes.stat}>
-        <Typography className={classes.score}>{currentStreak}</Typography>
+        <Typography className={classes.score}>
+          <NumberEasing value={currentStreak} speed={easeSpeed} />
+        </Typography>
         <Typography className={classes.label}>Current streak</Typography>
       </Box>
       <Divider className={classes.divider} />
       <Box className={classes.stat}>
-        <Typography className={classes.score}>{longestStreak}</Typography>
+        <Typography className={classes.score}>
+          <NumberEasing value={longestStreak} speed={easeSpeed} />
+        </Typography>
         <Typography className={classes.label}>Longest streak</Typography>
       </Box>
     </Box>
