@@ -31,3 +31,10 @@ type QuestionAction =
   ;
 
 type Results = [correct: number, outOf: number];
+
+interface Stats {
+  correct: number;
+  outOf: number;
+  currentStreak: number;
+  longestStreak: number;
+}

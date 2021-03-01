@@ -6,7 +6,7 @@ import {
   Button,
 } from '@material-ui/core';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Score from 'components/Score';
+import Stats from 'components/Stats';
 
 const styles = () => createStyles({
   content: {
@@ -36,48 +36,60 @@ const styles = () => createStyles({
 const useStyles = makeStyles(styles);
 
 function App() {
-  const initialScore = [0, 0] as [number, number]; // [correct, outOf]
-  let storedScore;
-  if (localStorage.getItem('score')) {
-    storedScore = JSON.parse(localStorage.getItem('score')!);
+  const initialStats = {
+    correct: 0,
+    outOf: 0,
+    currentStreak: 0,
+    longestStreak: 0,
+  } as Stats;
+
+  let storedStats;
+  if (localStorage.getItem('stats')) {
+    storedStats = JSON.parse(localStorage.getItem('stats')!);
   }
 
-  const [score, setScore] = useState<[number, number]>(
-    storedScore || initialScore,
+  const [stats, setStats] = useState<Stats>(
+    storedStats || initialStats,
   );
   const classes = useStyles();
 
   const updateScore = (results: Results) => {
     const [correct, outOf] = results;
-    const [currentCorrect, currentOutOf] = score;
-    const newScore = [
-      correct + currentCorrect, outOf + currentOutOf,
-    ] as [number, number];
-    setScore(newScore);
+    const isPerfect = outOf > 0 && correct === outOf;
+    setStats({
+      correct: stats.correct + correct,
+      outOf: stats.outOf + outOf,
+      currentStreak: isPerfect ? (stats.currentStreak += 1) : 0,
+      longestStreak:
+        stats.longestStreak
+          + (isPerfect && (stats.currentStreak + 1 > stats.longestStreak)
+            ? 1
+            : 0),
+    });
   };
 
   const handleReset = () => {
     gtag('event', 'reset', {
       event_category: 'score',
-      event_label: `${score[0]}/${score[1]}`,
+      event_label: `${stats.correct}/${stats.outOf}`,
     });
-    setScore(initialScore);
+    setStats(initialStats);
   };
 
   useEffect(() => {
-    localStorage.setItem('score', JSON.stringify(score));
-  }, [score]);
+    localStorage.setItem('score', JSON.stringify(stats));
+  }, [stats]);
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Box className={classes.root}>
         <Box className={classes.content}>
-          <Score score={score} />
+          <Stats stats={stats} />
           <Question updateScore={updateScore} />
           <Button
             className={classes.resetButton}
-            disabled={score[1] === 0}
+            disabled={stats.outOf === 0}
             disableRipple
             onClick={handleReset}
           >

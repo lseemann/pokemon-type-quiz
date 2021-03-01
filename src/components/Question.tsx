@@ -70,7 +70,7 @@ const styles = (theme: Theme) => createStyles({
   question: {
     fontSize: '1.5rem',
     lineHeight: 'normal',
-    margin: '1rem 0 0.5rem',
+    margin: '0 0 0.5rem',
     textAlign: 'center',
     [theme.breakpoints.up('sm')]: {
       rowGap: '2rem',
