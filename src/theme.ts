@@ -5,11 +5,12 @@ import {
 export const theme = createMuiTheme({
   overrides: {},
   typography: {
-    fontFamily: '"Ringside Regular SSm A", "Ringside Regular SSm B", "roboto", "sans-serif"',
+    fontFamily:
+      '"Ringside Regular SSm A", "Ringside Regular SSm B", "roboto", "sans-serif"',
   },
   palette: {
     background: {
-      default: '#003965',
+      default: '#b8c5c3',
     },
     error: {
       main: '#dc4738',

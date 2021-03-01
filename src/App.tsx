@@ -4,6 +4,7 @@ import theme from 'theme';
 import {
   createStyles, ThemeProvider, makeStyles, Box,
   Button,
+  Paper,
 } from '@material-ui/core';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Stats from 'components/Stats';
@@ -90,7 +91,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Box className={classes.root}>
-        <Box className={classes.content}>
+        <Paper className={classes.content}>
           <Stats stats={stats} />
           <Question updateScore={updateScore} />
           <Button
@@ -101,7 +102,7 @@ function App() {
           >
             Reset score
           </Button>
-        </Box>
+        </Paper>
       </Box>
     </ThemeProvider>
   );
